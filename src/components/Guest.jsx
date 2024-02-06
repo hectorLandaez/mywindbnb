@@ -18,7 +18,7 @@ function Guest(tguests){
     function sumar(target){
       let content = parseInt(target.textContent)
       let tcontent = parseInt(tguests.textContent)
-     /*  problemas con el desplegar */
+   
         content+=1
         tcontent+=1
   

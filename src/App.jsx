@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 import Nav from "./components/Nav";
+import Guest from "./components/Guest";
 
 function App() {
   const [data, setData] = useState([]);
@@ -10,7 +11,6 @@ function App() {
     try {
       const res = await fetch("stays.json");
       const resJson = await res.json();
-      // Aquí guardamos los datos de "stays.json" en la variable data.
       setData(resJson);
     } catch (error) {
       console.log(error);
@@ -38,16 +38,13 @@ function App() {
     e.preventDefault();
     let location = document.getElementById("location");
     let tguests = document.getElementById("tguests");
-   
+
     let text = location.textContent;
     let number = parseInt(tguests.textContent);
-  
 
-    
     const filtered = filterData(text, number);
     if (filtered.length != 0) {
       setData(filtered);
-      
     } else {
       setData(data);
     }
@@ -62,15 +59,13 @@ function App() {
 
   let PDiv = document.getElementById("PDiv");
   let btns1 = document.getElementById("btns1");
- 
+  let tguests = document.querySelector("guest1");
+
 
   function ocultar(bt1, bt2) {
     bt1.style.display = "block";
     bt2.style.display = "none";
   }
-
- 
-  
 
   return (
     <>
@@ -79,9 +74,11 @@ function App() {
         <div id="btns1">
           <div className="btns1">
             <div className="logo">
-              <span>
-                <img src="src/img/logo.svg" />
-              </span>
+              <form action="">
+                <button type="submit" className="homeButton">
+                  <img src="src/img/logo.svg" />
+                </button>
+              </form>
             </div>
 
             <div className="botones1">
@@ -89,10 +86,10 @@ function App() {
                 whole,finland
               </button>
               <button className="guest1" onClick={() => ocultar(PDiv, btns1)}>
-                0
+              0
               </button>
               <button className="buscar1" onClick={() => ocultar(PDiv, btns1)}>
-                <span class="material-symbols-outlined">search</span>
+                <span className="material-symbols-outlined">search</span>
               </button>
             </div>
           </div>
@@ -110,7 +107,7 @@ function App() {
               <div className="text">
                 <span className="age">{el.type}</span>
                 <span className="star-span">
-                  <span class="material-symbols-outlined">grade</span>
+                  <span className="material-symbols-outlined">grade</span>
                   {el.rating}
                 </span>
               </div>

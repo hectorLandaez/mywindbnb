@@ -28,12 +28,12 @@ function Cities() {
     <div id="citybtns">
       {nnmir.map((el, i) => {
         return (
-          <div>
+          <div key={i}>
             <button
               className="citybtn"
               onClick={() => (location.textContent = el)}
             >
-              <span class="material-symbols-outlined">pin_drop</span>
+              <span className="material-symbols-outlined">pin_drop</span>
               {el}, Finland
             </button>
           </div>

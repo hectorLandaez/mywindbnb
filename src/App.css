@@ -130,7 +130,8 @@ nav {
   justify-content: space-between;
 }
 .botn1 {
-  border-color: #f1efef;
+  border-style: solid;
+  border-color: black;
   border-radius: 15px 0 0 15px;
   height: 90%;
   width: 45%;
@@ -139,11 +140,14 @@ nav {
   flex-direction: column;
   padding: 1%;
   background-color: white;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+/*   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);*/ 
+  appearance: none;
+  border-style: none;
 }
 
 .botn2 {
-  border-color: #f1efef;
+  border-style: solid;
+  border-color: black;
   height: 90%;
   width: 45%;
   display: flex;
@@ -151,7 +155,18 @@ nav {
   flex-direction: column;
   padding: 1%;
   background-color: white;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+ /*  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); */
+  appearance: none;
+  border-style: none;
+}
+.botn1:hover {
+  /*   background-color: #f5f5f5;*/
+    border-color: black;
+    border-style: solid;
+  }
+.botn2:hover {
+  border-style: solid;
+  border-color: black;
 }
 .botn3 {
   border-color: grey;
@@ -171,10 +186,7 @@ nav {
   width: 90%;
 }
 
-.PDiv {
-  height: 350px;
-  display: none;
-}
+
 /* nav */
 
 /* adbtns */
@@ -226,6 +238,7 @@ nav {
   justify-content: flex-start;
   flex-direction: column;
   margin-top: 3%;
+  margin-bottom: 3%;
 }
 .citybtn {
   background: none;
@@ -302,7 +315,46 @@ nav {
   justify-content: space-between;
 }
 
+.modal{
+  background: #fff;
+  max-width:100%;
+  margin: auto;
+  /* padding: 20px; */
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  animation: fadeIn 0.5s ease-in-out forwards; 
+  opacity: 0;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
 .close {
   background: none;
   border: none;
+  cursor: pointer;
+}
+.PDiv {
+  height: 350px;
+  display: none;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.homeButton{
+  cursor: pointer;
+  appearance: none;
+  border-style: none;
+  background-color:#faffff ;
 }
